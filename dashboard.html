@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kelola Ucapan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+
+<div class="manage-wrapper">
+
+    <div class="manage-header">
+        <h1>⚙️ Kelola Ucapan</h1>
+        <p>Hapus ucapan yang tidak diinginkan</p>
+    </div>
+
+    {% if data %}
+        {% for row in data %}
+        <div class="wish-item">
+            <div class="wish-text">
+                <h3>{{ row[1] }}</h3>
+                <p>{{ row[2] }}</p>
+            </div>
+
+            <form action="{{ url_for('delete_wish', id=row[0]) }}" method="POST">
+                <button class="delete-btn">Hapus</button>
+            </form>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="empty">
+            Belum ada ucapan masuk.
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<title>Selamat Ulang Tahun</title>
+</head>
+<body>
+
+
+<div class="container">
+<h1>🎉 Selamat Ulang Tahun 🎂</h1>
+<p>Semoga panjang umur, sehat selalu, dan semua impian tercapai.</p>
+
+
+<div class="gallery">
+{% for img in images %}
+<img src="/static/uploads/{{img}}">
+{% endfor %}
+</div>
+
+
+<a class="btn" href="/kirim">Tulis Ucapan 💌</a>
+</div>
+
+
+</body>
+</html>
